@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 
 public class Recital extends Evento{
 	//Atributes
-	private String categoria;
+	//private boolean vip;
 	private String bandaPricipal;
 	private String bandaSoporte1;
 	private String bandaSoporte2;
@@ -17,7 +17,8 @@ public class Recital extends Evento{
 	//Constructors
 	public Recital() {
 		super();
-		categoria = "";
+		super.setTipoEvento("Recital");
+		//vip = false;
 		bandaPricipal = "";
 		bandaSoporte1 = "";
 		bandaSoporte2 = "";
@@ -26,11 +27,11 @@ public class Recital extends Evento{
 		precioEntradaGeneral = 0;
 	}
 
-	public Recital(String nombreEvento, String tipoEvento, Timestamp ahora,
-			Time duracionEvento, String categoria, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, String genero,
+	public Recital(String nombreEvento , Timestamp ahora,
+			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, String genero,
 			double precioEntradaVip, double precioEntradaGeneral) {
-		super(nombreEvento, tipoEvento, ahora, duracionEvento);
-		this.categoria = categoria;
+		super(nombreEvento, "Recital",ahora, duracionEvento);
+		//this.vip = categoria;
 		this.bandaPricipal = bandaPricipal;
 		this.bandaSoporte1 = bandaSoporte1;
 		this.bandaSoporte2 = bandaSoporte2;
@@ -42,7 +43,7 @@ public class Recital extends Evento{
 
 	@Override
 	public String toString() {
-		return super.toString() + "Recital [categoria=" + categoria + ", bandaPricipal=" + bandaPricipal + ", bandaSoporte1="
+		return super.toString() + " Recital [bandaPricipal=" + bandaPricipal + ", bandaSoporte1="
 				+ bandaSoporte1 + ", bandaSoporte2=" + bandaSoporte2 + ", genero=" + genero + ", precioEntradaVip="
 				+ precioEntradaVip + ", precioEntradaGeneral=" + precioEntradaGeneral + "]";
 	}

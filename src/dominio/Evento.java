@@ -3,7 +3,7 @@ package dominio;
 import java.sql.Timestamp;
 import java.sql.Time;
 
-public class Evento {
+public abstract class Evento {
 	
 	//Attributes
 	private int numero;
@@ -38,7 +38,7 @@ public class Evento {
 
 	@Override
 	public String toString() {
-		return "Entrada [numero=" + numero + ", nombreEvento=" + nombreEvento + ", tipoEvento=" + tipoEvento
+		return "Entrada [numero=" + numero +  ", tipoEvento=" + tipoEvento +", nombreEvento=" + nombreEvento 
 				+ ", diaHora=" + diaHora + ", duracionEvento=" + duracionEvento + "]";
 	}
 

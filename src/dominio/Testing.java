@@ -20,9 +20,20 @@ public class Testing {
 		Recital entr2Recital = new Recital();
 		System.out.println(entr2Recital);
 		
-		Evento entr3 = new Recital("Rock", "Recital", ahora, duracion,
-				"VIP", "Guns n Roses", "Led Zeppelin", "Kiss", "Metal",
+		Evento entr3 = new Recital("Rock", ahora, duracion,
+				"Guns n Roses", "Led Zeppelin", "Kiss", "Metal",
 				1500, 800);
 		System.out.println(entr3);
+	}
+	
+	public void nuevaEntradaRecital() {
+		Timestamp ahora = new Timestamp(System.currentTimeMillis());
+		Time duracion = new Time(2, 30, 0);
+		
+		Evento event4 = new Recital("Rock", ahora, duracion,
+				"Metalica", "Led Zeppelin", "Kiss", "Metal",
+				1500, 800);
+		Entrada ticket = new Entrada(event4.getNumero(), event4, 123, "VIP");
+		System.out.println(ticket);
 	}
 }
