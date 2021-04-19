@@ -43,7 +43,7 @@ public class Recital extends Evento{
 
 	@Override
 	public String toString() {
-		return super.toString() + " Recital [bandaPricipal=" + bandaPricipal + ", bandaSoporte1="
+		return super.toString() + " Detalles del Recital [bandaPricipal=" + bandaPricipal + ", bandaSoporte1="
 				+ bandaSoporte1 + ", bandaSoporte2=" + bandaSoporte2 + ", genero=" + genero + ", precioEntradaVip="
 				+ precioEntradaVip + ", precioEntradaGeneral=" + precioEntradaGeneral + "]";
 	}
