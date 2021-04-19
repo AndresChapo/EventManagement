@@ -16,13 +16,7 @@ public class Principal {
 		
 		String opcion = "";
 		while(opcion !=  "0"){
-			 System.out.println("---------------------------");	
-			 System.out.println("1. Cargar Evento");
-			 System.out.println("2. Listar Eventos");
-			 System.out.println("3. Generar Entradas");
-			 System.out.println("4. Listar Entradas");
-			 //System.out.println("2. Comprar Entradas");	
-			 //System.out.println("3. Listar Entradas");	
+			form.listarOpciones("Seleccione una opción","Cargar Evento","Listar Eventos","Generar Entradas","Listar Entradas");
 			 System.out.println("---------TESTING----------");
 			 System.out.println("11. Probar - Cargar Evento Recital");
 			 System.out.println("12. Probar - Generar Entrara de Evento Recital");

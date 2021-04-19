@@ -23,21 +23,20 @@ public class Recital extends Evento{
 		bandaSoporte1 = "";
 		bandaSoporte2 = "";
 		genero = "";
-		precioEntradaVip = 0;
-		precioEntradaGeneral = 0;
+		precioEntradaVip = 1500;
+		precioEntradaGeneral = 800;
 	}
 
 	public Recital(String nombreEvento , Timestamp ahora,
-			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, String genero,
-			double precioEntradaVip, double precioEntradaGeneral) {
+			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, String genero) {
 		super(nombreEvento, "Recital",ahora, duracionEvento);
 		//this.vip = categoria;
 		this.bandaPricipal = bandaPricipal;
 		this.bandaSoporte1 = bandaSoporte1;
 		this.bandaSoporte2 = bandaSoporte2;
 		this.genero = genero;
-		this.precioEntradaVip = precioEntradaVip;
-		this.precioEntradaGeneral = precioEntradaGeneral;
+		this.precioEntradaVip = 1500;
+		this.precioEntradaGeneral = 800;
 	}
 
 

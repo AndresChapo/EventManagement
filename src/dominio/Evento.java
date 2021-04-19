@@ -38,7 +38,7 @@ public abstract class Evento {
 
 	@Override
 	public String toString() {
-		return "Entrada [numero=" + numero +  ", tipoEvento=" + tipoEvento +", nombreEvento=" + nombreEvento 
+		return "Evento [numero=" + numero +  ", tipoEvento=" + tipoEvento +", nombreEvento=" + nombreEvento 
 				+ ", diaHora=" + diaHora + ", duracionEvento=" + duracionEvento + "]";
 	}
 

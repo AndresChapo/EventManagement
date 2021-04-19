@@ -14,11 +14,10 @@ public class Testing {
 		Timestamp ahora = new Timestamp(System.currentTimeMillis());
 		Time duracion = new Time(2, 30, 0);
 		
-		Evento entr3 = new Recital("Rock", ahora, duracion,
-				"Guns n Roses", "Led Zeppelin", "Kiss", "Metal",
-				1500, 800);
-		System.out.println(entr3);
-		return entr3;
+		Evento eve = new Recital("Rock", ahora, duracion,
+				"Guns n Roses", "Led Zeppelin", "Kiss", "Metal");
+		System.out.println(eve);
+		return eve;
 	}
 	
 	public Entrada nuevaEntradaRecital(Evento eve) {
