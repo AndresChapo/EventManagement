@@ -87,7 +87,7 @@ public class FormulariosAlta {
 		bandaSoporte1 = in.nextLine();
 		System.out.println("Nombre de la banda Soporte2: ");
 		bandaSoporte2 = in.nextLine();
-		System.out.println("Nombre del genero: ");
+		listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
 		genero = in.nextLine();
 		
 		Timestamp diaHora=new Timestamp(anio-1900, mes-1, dia, hora, minutos, 0, 0);

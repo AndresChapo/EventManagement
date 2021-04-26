@@ -13,6 +13,9 @@ public abstract class Evento {
 	private Time duracionEvento;
 	private static int cont=0;
 	
+	@Override
+	public abstract String toString();
+	
 	//Constructors
 	public Evento()
 	{
@@ -34,12 +37,6 @@ public abstract class Evento {
 		this.tipoEvento = tipoEvento;
 		this.diaHora = ahora;
 		this.duracionEvento = duracionEvento;
-	}
-
-	@Override
-	public String toString() {
-		return "Evento [numero=" + numero +  ", tipoEvento=" + tipoEvento +", nombreEvento=" + nombreEvento 
-				+ ", diaHora=" + diaHora + ", duracionEvento=" + duracionEvento + "]";
 	}
 
 	public int getNumero() {

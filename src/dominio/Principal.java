@@ -14,6 +14,8 @@ public class Principal {
 		LinkedList<Evento> listaEventos = new LinkedList<Evento>();
 		LinkedList<Entrada> listaEntradas = new LinkedList<Entrada>();
 		
+
+		
 		String opcion = "";
 		while(opcion !=  "0"){
 			form.listarOpciones("Seleccione una opción","Cargar Evento","Listar Eventos","Generar Entradas","Listar Entradas");

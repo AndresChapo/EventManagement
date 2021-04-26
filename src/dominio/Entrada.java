@@ -23,8 +23,8 @@ public class Entrada {
 
 	@Override
 	public String toString() {
-		return "Entrada [idEntrada=" + idEntrada + ", idEvento=" + idEvento + ", evento=" + evento + ", precio="
-				+ precio + ", categoria=" + categoria + "]";
+		return "Entrada [idEntrada=" + idEntrada + ", idEvento=" + idEvento + ", precio="
+				+ precio + ", categoria=" + categoria + ", " + evento + "]";
 	}
 }
 //vip/gral/edad - recital
