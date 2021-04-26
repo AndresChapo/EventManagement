@@ -22,6 +22,7 @@ public class Principal {
 			 System.out.println("---------TESTING----------");
 			 System.out.println("11. Probar - Cargar Evento Recital");
 			 System.out.println("12. Probar - Generar Entrara de Evento Recital");
+			 System.out.println("13. Probar - Cargar Evento Teatro");
 			 //System.out.println("12. Probar - Cargar Evento Infantil");
 			 //System.out.println("13. Probar - Cargar Evento Recital");
 			//System.out.println("14. Probar - Cargar Evento Teatro");
@@ -54,6 +55,9 @@ public class Principal {
 					break;
 				case "12":
 					listaEntradas.add(test.nuevaEntradaRecital(listaEventos.get(1)));
+					break;
+				case "13":
+					listaEventos.add(test.nuevoTeatro());
 					break;
 				default:
 					System.out.println("Datos invalidos!");

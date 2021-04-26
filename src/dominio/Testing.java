@@ -2,6 +2,7 @@ package dominio;
 
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 public class Testing {
 
@@ -16,6 +17,20 @@ public class Testing {
 		
 		Evento eve = new Recital("Rock en las rocas", ahora, duracion,
 				"Guns n Roses", "Led Zeppelin", "Kiss", "2");
+		System.out.println(eve);
+		return eve;
+	}
+	
+	public Evento nuevoTeatro() {
+		Timestamp ahora = new Timestamp(System.currentTimeMillis());
+		Time duracion = new Time(2, 30, 0);
+		
+		ArrayList<String> actores = new ArrayList<String>();
+		actores.add("Andy Creed");
+		actores.add("Ale Scalada");
+
+		Evento eve = new Teatro("Shakespiere", ahora, duracion,
+				new TipoGenero("Teatro",1,"Drama"), actores);
 		System.out.println(eve);
 		return eve;
 	}

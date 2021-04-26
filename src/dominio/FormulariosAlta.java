@@ -16,7 +16,7 @@ public class FormulariosAlta {
 		while(opcion !=  "0"){
 			listarOpciones("Seleccione una opción","Recital","Teatro","Infantil","Deporte");
 			 System.out.println("0. Salir");
-			 System.out.println("11. Recital TESTING");
+//			 System.out.println("11. Recital TESTING");
 			 System.out.println("Ingrese la opcion");
 		     opcion = in.nextLine();
 
