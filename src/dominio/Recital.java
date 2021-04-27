@@ -52,20 +52,20 @@ public class Recital extends Evento implements IGeneros{
 		bandaPricipal = "";
 		bandaSoporte1 = "";
 		bandaSoporte2 = "";
-		genero = new TipoGenero();
+		genero = new Genero();
 		precioEntradaVip = 1500;
 		precioEntradaGeneral = 800;
 	}
 
 	public Recital(String nombreEvento , Timestamp ahora,
-			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, String idGenero) {
+			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, Genero genero) {
 		super(nombreEvento, "Recital",ahora, duracionEvento);
 		//this.vip = categoria;
 		cargarGeneros();
 		this.bandaPricipal = bandaPricipal;
 		this.bandaSoporte1 = bandaSoporte1;
 		this.bandaSoporte2 = bandaSoporte2;
-		this.genero = getGenero(Integer.parseInt(idGenero));
+		this.genero = genero;
 		this.precioEntradaVip = 1500;
 		this.precioEntradaGeneral = 800;
 

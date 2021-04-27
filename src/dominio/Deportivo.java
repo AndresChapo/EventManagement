@@ -35,7 +35,7 @@ public class Deportivo extends Evento{
 		return "Detalles del Evento [numero=" + super.getNumero() +  ", tipoEvento=" + super.getTipoEvento() 
 		+ ", nombreEvento=" + super.getNombreEvento() 
 		+ ", diaHora=" + super.getDiaHora() + ", duracionEvento=" + super.getDuracionEvento() + "]" 
-		+ "Detalles del evento deportivo [deporte=" + deporte + ", internacional=" + internacional + "]";
+		+ " Detalles del evento deportivo [" + deporte + ", internacional=" + internacional + "]";
 	}
 
 	

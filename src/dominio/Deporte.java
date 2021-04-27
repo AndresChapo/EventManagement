@@ -38,7 +38,7 @@ public class Deporte {
 
 	@Override
 	public String toString() {
-		return "Deporte [idDeporte=" + idDeporte + ", nombre=" + nombre + ", precio=" + precio + "]";
+		return " Deporte [idDeporte=" + idDeporte + ", nombre=" + nombre + ", precio=" + precio + "]";
 	}
 	
 }

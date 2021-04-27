@@ -10,13 +10,13 @@ public class FormulariosAlta {
 	Scanner in = new Scanner(System.in);
 	private Testing test = new Testing();
 	LinkedList<String> listaOpciones = new LinkedList<String>();
+	Tipos tipos = new Tipos();
 	
 	public Evento altaEvento() {
 		Evento eve;
 		while(opcion !=  "0"){
 			listarOpciones("Seleccione una opción","Recital","Teatro","Infantil","Deporte");
 			 System.out.println("0. Salir");
-//			 System.out.println("11. Recital TESTING");
 			 System.out.println("Ingrese la opcion");
 		     opcion = in.nextLine();
 
@@ -25,15 +25,17 @@ public class FormulariosAlta {
 					eve = altaEventoRecital();
 					return eve;
 				case "2":
-
+					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN: altaEventoRecital() Y EN Testing.nuevoTeatro()");
+					in.nextLine();
 					break;
 				case "3":
+					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN: altaEventoRecital() Y EN Testing.nuevoInfantil()");
+					in.nextLine();
 					break;
 				case "4":
+					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN: altaEventoRecital() Y EN Testing.nuevoDeportivo()");
+					in.nextLine();
 					break;
-				case "11":
-					eve = test.nuevoRecital();
-					return eve;	
 				case "0":
 					return null;
 
@@ -57,7 +59,7 @@ public class FormulariosAlta {
 		String bandaPricipal="";
 		String bandaSoporte1="";
 		String bandaSoporte2="";
-		String genero="";
+		Genero genero;
 		
 		String opcion ="";
 		Scanner in = new Scanner(System.in);
@@ -88,7 +90,7 @@ public class FormulariosAlta {
 		System.out.println("Nombre de la banda Soporte2: ");
 		bandaSoporte2 = in.nextLine();
 		listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
-		genero = in.nextLine();
+		genero = tipos.getGeneroMusical(Integer.parseInt(in.nextLine()));
 		
 		Timestamp diaHora=new Timestamp(anio-1900, mes-1, dia, hora, minutos, 0, 0);
 		Time duracionEvento=new Time(horasDuracion, minutosDuracion, 0);

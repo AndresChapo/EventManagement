@@ -34,7 +34,7 @@ public class Infantil extends Evento{
 		return "Detalles del Evento [numero=" + super.getNumero() +  ", tipoEvento=" + super.getTipoEvento() 
 		+ ", nombreEvento=" + super.getNombreEvento() 
 		+ ", diaHora=" + super.getDiaHora() + ", duracionEvento=" + super.getDuracionEvento() + "]" 
-		+ "Detalles del Infantil [precioMenorDe8=" + precioMenorDe8 + ", precioMayorDe8=" + precioMayorDe8 + ", conSouvenir="
+		+ " Detalles del Infantil [precioMenorDe8=" + precioMenorDe8 + ", precioMayorDe8=" + precioMayorDe8 + ", conSouvenir="
 				+ conSouvenir + "]";
 	}
 

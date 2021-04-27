@@ -5,7 +5,8 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 
 public class Testing {
-
+	public Tipos tipos = new Tipos();
+	
 	public Testing() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -16,7 +17,7 @@ public class Testing {
 		Time duracion = new Time(2, 30, 0);
 		
 		Evento eve = new Recital("Rock en las rocas", ahora, duracion,
-				"Guns n Roses", "Led Zeppelin", "Kiss", "2");
+				"Guns n Roses", "Led Zeppelin", "Kiss", this.tipos.getGeneroMusical(1));
 		System.out.println(eve);
 		return eve;
 	}
@@ -30,7 +31,7 @@ public class Testing {
 		actores.add("Ale Scalada");
 
 		Evento eve = new Teatro("Shakespiere", ahora, duracion,
-				new TipoGenero("Teatro",1,"Drama"), actores);
+				this.tipos.getGeneroTeatral(1), actores);
 		System.out.println(eve);
 		return eve;
 	}
@@ -47,9 +48,9 @@ public class Testing {
 	public Evento nuevoDeportivo() {
 		Timestamp ahora = new Timestamp(System.currentTimeMillis());
 		Time duracion = new Time(1, 0, 0);
-		Deporte futbol = new Deporte(1,"Futbol",300);
+//		Deporte futbol = new Deporte(1,"Futbol",300);
 
-		Evento eve = new Deportivo("Supercampeones", ahora, duracion,futbol,true);
+		Evento eve = new Deportivo("Supercampeones", ahora, duracion,this.tipos.getDeporte(1),true);
 		System.out.println(eve);
 		return eve;
 	}

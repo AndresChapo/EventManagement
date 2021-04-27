@@ -77,7 +77,7 @@ public class Teatro extends Evento implements IGeneros{
 		return "Detalles del Evento [numero=" + super.getNumero() +  ", tipoEvento=" + super.getTipoEvento() 
 		+ ", nombreEvento=" + super.getNombreEvento() 
 		+ ", diaHora=" + super.getDiaHora() + ", duracionEvento=" + super.getDuracionEvento() + "]"
-		+ "Detalles de la obra de teatro [precioGeneral=" + precioGeneral + ", " + genero + ", actores=" + getActores() + "]";
+		+ " Detalles de la obra de teatro [precioGeneral=" + precioGeneral + ", " + genero + ", actores=" + getActores() + "]";
 	}
 	
 }
