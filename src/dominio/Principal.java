@@ -21,12 +21,10 @@ public class Principal {
 			form.listarOpciones("Seleccione una opción","Cargar Evento","Listar Eventos","Generar Entradas","Listar Entradas");
 			 System.out.println("---------TESTING----------");
 			 System.out.println("11. Probar - Cargar Evento Recital");
-			 System.out.println("12. Probar - Generar Entrara de Evento Recital");
-			 System.out.println("13. Probar - Cargar Evento Teatro");
-			 //System.out.println("12. Probar - Cargar Evento Infantil");
-			 //System.out.println("13. Probar - Cargar Evento Recital");
-			//System.out.println("14. Probar - Cargar Evento Teatro");
-			//System.out.println("---------------------------");
+			 System.out.println("12. Probar - Cargar Evento Teatro");
+			 System.out.println("13. Probar - Cargar Evento Infantil");
+			 System.out.println("14. Probar - Cargar Evento Deportivo");
+			 System.out.println("20. Probar - Generar Entrada de Evento ID 1");
 			 System.out.println("Ingrese la opcion");	
 		     opcion = in.nextLine();
 			 System.out.println();
@@ -54,10 +52,16 @@ public class Principal {
 					listaEventos.add(test.nuevoRecital());
 					break;
 				case "12":
-					listaEntradas.add(test.nuevaEntradaRecital(listaEventos.get(1)));
+					listaEventos.add(test.nuevoTeatro());
 					break;
 				case "13":
-					listaEventos.add(test.nuevoTeatro());
+					listaEventos.add(test.nuevoInfantil());
+					break;
+				case "14":
+					listaEventos.add(test.nuevoDeportivo());
+					break;
+				case "20":
+					listaEntradas.add(test.nuevaEntradaRecital(listaEventos.get(0)));
 					break;
 				default:
 					System.out.println("Datos invalidos!");

@@ -35,6 +35,25 @@ public class Testing {
 		return eve;
 	}
 	
+	public Evento nuevoInfantil() {
+		Timestamp ahora = new Timestamp(System.currentTimeMillis());
+		Time duracion = new Time(1, 0, 0);
+
+		Evento eve = new Infantil("Show de payasos", ahora, duracion,true);
+		System.out.println(eve);
+		return eve;
+	}
+	
+	public Evento nuevoDeportivo() {
+		Timestamp ahora = new Timestamp(System.currentTimeMillis());
+		Time duracion = new Time(1, 0, 0);
+		Deporte futbol = new Deporte(1,"Futbol",300);
+
+		Evento eve = new Deportivo("Supercampeones", ahora, duracion,futbol,true);
+		System.out.println(eve);
+		return eve;
+	}
+	
 	public Entrada nuevaEntradaRecital(Evento eve) {
 		Timestamp ahora = new Timestamp(System.currentTimeMillis());
 		Time duracion = new Time(2, 30, 0);
@@ -43,4 +62,5 @@ public class Testing {
 		System.out.println(ticket);
 		return ticket;
 	}
+
 }
