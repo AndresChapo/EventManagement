@@ -44,6 +44,38 @@ public class Recital extends Evento implements IGeneros{
 		return listaGeneros.get(idGenero-1);
 	}
 
+	public String getBandaPricipal() {
+		return bandaPricipal;
+	}
+
+	public void setBandaPricipal(String bandaPricipal) {
+		this.bandaPricipal = bandaPricipal;
+	}
+
+	public String getBandaSoporte1() {
+		return bandaSoporte1;
+	}
+
+	public void setBandaSoporte1(String bandaSoporte1) {
+		this.bandaSoporte1 = bandaSoporte1;
+	}
+
+	public String getBandaSoporte2() {
+		return bandaSoporte2;
+	}
+
+	public void setBandaSoporte2(String bandaSoporte2) {
+		this.bandaSoporte2 = bandaSoporte2;
+	}
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
+	}
+
 	//Constructors
 	public Recital() {
 		super();
@@ -56,6 +88,14 @@ public class Recital extends Evento implements IGeneros{
 		precioEntradaVip = 1500;
 		precioEntradaGeneral = 800;
 	}
+	
+	public Recital(String nombreEvento , Timestamp ahora,
+			Time duracionEvento) {
+		super(nombreEvento, "Recital",ahora, duracionEvento);
+		this.precioEntradaVip = 1500;
+		this.precioEntradaGeneral = 800;
+	}
+	
 
 	public Recital(String nombreEvento , Timestamp ahora,
 			Time duracionEvento, String bandaPricipal, String bandaSoporte1, String bandaSoporte2, Genero genero) {

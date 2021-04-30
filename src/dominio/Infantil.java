@@ -12,6 +12,10 @@ public class Infantil extends Evento{
 		super(nombreEvento, "Infantil", ahora, duracionEvento);
 		this.conSouvenir = conSouvenir;
 	}
+	
+	public Infantil(String nombreEvento, Timestamp ahora, Time duracionEvento) {
+		super(nombreEvento, "Infantil", ahora, duracionEvento);
+	}
 
 	public boolean isConSouvenir() {
 		return conSouvenir;

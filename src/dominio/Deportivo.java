@@ -13,6 +13,10 @@ public class Deportivo extends Evento{
 		this.deporte = deporte;
 		this.internacional = internacional;
 	}
+	
+	public Deportivo(String nombreEvento, Timestamp ahora, Time duracionEvento) {
+		super(nombreEvento, "Deportivo", ahora, duracionEvento);
+	}
 
 	public Deporte getDeporte() {
 		return deporte;

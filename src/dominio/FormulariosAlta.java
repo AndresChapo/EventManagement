@@ -4,6 +4,7 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class FormulariosAlta {
 	private String opcion = "";
@@ -23,6 +24,7 @@ public class FormulariosAlta {
 			 switch (opcion) {
 				case "1":
 					eve = altaEventoRecital();
+					eve = altaTipoEvento(eve);
 					return eve;
 				case "2":
 					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN: altaEventoRecital() Y EN Testing.nuevoTeatro()");
@@ -47,7 +49,7 @@ public class FormulariosAlta {
 		return null;		
 	}
 
-	public Evento altaEventoRecital() {
+	public Evento altaTipoEvento(String tipoEvento , Evento evento) {
 		String nombreEvento="";
 		int anio=0;
 		int mes=0;
@@ -56,11 +58,6 @@ public class FormulariosAlta {
 		int minutos=0;
 		int horasDuracion=0;
 		int minutosDuracion=0;
-		String bandaPricipal="";
-		String bandaSoporte1="";
-		String bandaSoporte2="";
-		Genero genero;
-		
 		String opcion ="";
 		Scanner in = new Scanner(System.in);
 
@@ -83,25 +80,55 @@ public class FormulariosAlta {
 		System.out.println("Minutos: ");
 		minutosDuracion = Integer.parseInt(in.nextLine());
 		
-		System.out.println("Nombre de la banda pricipal: ");
-		bandaPricipal = in.nextLine();
-		System.out.println("Nombre de la banda Soporte1: ");
-		bandaSoporte1 = in.nextLine();
-		System.out.println("Nombre de la banda Soporte2: ");
-		bandaSoporte2 = in.nextLine();
-		listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
-		genero = tipos.getGeneroMusical(Integer.parseInt(in.nextLine()));
-		
 		Timestamp diaHora=new Timestamp(anio-1900, mes-1, dia, hora, minutos, 0, 0);
 		Time duracionEvento=new Time(horasDuracion, minutosDuracion, 0);
-		Evento rec = new Recital(nombreEvento, diaHora, duracionEvento,
-				bandaPricipal, bandaSoporte1, bandaSoporte2, genero);
-		System.out.println("EVENTO DADO DE ALTA!");
-		System.out.println(rec);
+		
+		switch(tipoEvento) {
+		case "recital":
+			Recital rec = new Recital(nombreEvento, diaHora, duracionEvento);
+			System.out.println("Nombre de la banda pricipal: ");
+			rec.setBandaPricipal(in.nextLine());
+			System.out.println("Nombre de la banda Soporte1: ");
+			rec.setBandaSoporte1(in.nextLine()); 
+			System.out.println("Nombre de la banda Soporte2: ");
+			rec.setBandaSoporte2(in.nextLine()); 
+			listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
+			rec.setGenero(tipos.getGeneroMusical(Integer.parseInt(in.nextLine())));
+			System.out.println("EVENTO DADO DE ALTA!");
+			System.out.println(rec);
+			evento = rec;
+			break;
+		case "teatro":
+			int cantActores;
+			ArrayList actores = new ArrayList();
+			Teatro teatro = new Teatro(nombreEvento , diaHora , duracionEvento);
+			System.out.println("Ingrese la cantidad de actores: ");
+			cantActores = Integer.parseInt(in.nextLine());
+			for(int i=0; i>cantActores; i++) {
+				System.out.println("Ingrese el actor: ");
+				actores.add(in.nextLine());
+			}
+			teatro.setActores(actores);
+			listarOpciones("Elija el genero: ", "Drama", "Teatro", "Comedia");
+			teatro.setGenero(tipos.getGeneroMusical(Integer.parseInt(in.nextLine())));
+			System.out.println("EVENTO DADO DE ALTA!");
+			System.out.println(teatro);
+			evento = teatro;
+			break;
+		case "deporte":
+			Deportivo deportivo = new Deportivo(nombreEvento , diaHora , duracionEvento);
+			evento = deportivo;
+			break;
+		case "infantil":
+			Infantil infantil = new Infantil(nombreEvento , diaHora , duracionEvento);
+			evento = infantil;
+			break;
+		}
 		System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
 		in.nextLine();
-		return rec;
+		return evento;
 	}
+	
 	public int preguntarOpcion() {
 		String opcion ="";
 		Scanner in = new Scanner(System.in);

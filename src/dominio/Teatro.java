@@ -13,6 +13,10 @@ public class Teatro extends Evento implements IGeneros{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Teatro(String nombreEvento, Timestamp ahora, Time duracionEvento) {
+		super(nombreEvento, "Teatro", ahora, duracionEvento);
+	}
 
 	public Teatro(String nombreEvento, Timestamp ahora, Time duracionEvento,
 			Genero genero, ArrayList<String> actores) {
@@ -35,6 +39,7 @@ public class Teatro extends Evento implements IGeneros{
 			System.out.println(i);
 		}
 	}
+
 
 	@Override
 	public String getNombreGenero(int idGenero) {
