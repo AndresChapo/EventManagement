@@ -1,6 +1,8 @@
 package dominio;
 
-public class Deporte {
+import java.util.ArrayList;
+
+public class Deporte{
 	private int idDeporte;
 	private String nombre;
 	private double precio;
@@ -10,6 +12,10 @@ public class Deporte {
 		this.idDeporte = idDeporte;
 		this.nombre = nombre;
 		this.precio = precio;
+	}
+	
+	public Deporte() {
+		super();
 	}
 
 	public int getIdDeporte() {
