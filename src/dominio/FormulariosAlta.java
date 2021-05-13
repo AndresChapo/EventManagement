@@ -55,19 +55,19 @@ public class FormulariosAlta {
 				eve = altaTipoEvento("recital", nombreEvento, diaHora, duracionEvento, eve);
 				return eve;
 			case "2":
-				eve = altaTipoEvento("Teatro", nombreEvento, diaHora, duracionEvento, eve);
+				eve = altaTipoEvento("teatro", nombreEvento, diaHora, duracionEvento, eve);
 				System.out.println(
 						"---FALTA DESARROLLAR  Testing.nuevoTeatro()");
 				in.nextLine();
 				break;
 			case "3":
-				eve = altaTipoEvento("Infantil", nombreEvento, diaHora, duracionEvento, eve);
+				eve = altaTipoEvento("infantil", nombreEvento, diaHora, duracionEvento, eve);
 				System.out.println(
 						"---FALTA DESARROLLAR Testing.nuevoInfantil()");
 				in.nextLine();
 				break;
 			case "4":
-				eve = altaTipoEvento("Deporte", nombreEvento, diaHora, duracionEvento, eve);
+				eve = altaTipoEvento("deporte", nombreEvento, diaHora, duracionEvento, eve);
 				System.out.println(
 						"---FALTA DESARROLLAR Testing.nuevoDeportivo()");
 				in.nextLine();
@@ -106,7 +106,8 @@ public class FormulariosAlta {
 			Teatro teatro = new Teatro(nombreEvento, diaHora, duracionEvento);
 			System.out.println("Ingrese la cantidad de actores: ");
 			cantActores = Integer.parseInt(in.nextLine());
-			for (int i = 0; i > cantActores; i++) {
+			System.out.println(cantActores);
+			for (int i = 0; i < cantActores; i++) {
 				System.out.println("Ingrese el actor: ");
 				actores.add(in.nextLine());
 			}
@@ -124,6 +125,7 @@ public class FormulariosAlta {
 				listarOpciones("Ingrese el tipo de evento depertivo: ", "Futbol", "Rugby", "Hockey");
 				System.out.println("0. Salir");
 				System.out.println("Ingrese la opcion");
+				opcion = in.nextLine();
 			}
 			deportivo.setDeporte(tipos.getDeporte(Integer.parseInt(in.nextLine())));
 			boolean internacional = false;

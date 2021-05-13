@@ -11,6 +11,7 @@ public class Principal {
 		Scanner in = new Scanner(System.in);
 		Testing test = new Testing();
 		FormulariosAlta form = new FormulariosAlta();
+		FormularioAltaEntrada formEntrada = new FormularioAltaEntrada();
 		LinkedList<Evento> listaEventos = new LinkedList<Evento>();
 		LinkedList<Entrada> listaEntradas = new LinkedList<Entrada>();
 		
@@ -28,6 +29,7 @@ public class Principal {
 			 System.out.println("Ingrese la opcion");	
 		     opcion = in.nextLine();
 			 System.out.println();
+	
 			 switch (opcion) {
 				case "1":
 					listaEventos.add(form.altaEvento());
@@ -40,6 +42,7 @@ public class Principal {
 					in.nextLine();
 					break;
 				case "3":
+					listaEntradas.add(formEntrada.altaEntrada(listaEventos, listaEntradas.size()));
 					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN altaEvento() Y CARGAR EL RESULTADO EN listaEntradas EL CUAL ES UN ARRAY DE Entradas");
 					in.nextLine();
 					break;

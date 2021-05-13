@@ -59,7 +59,7 @@ public class Testing {
 		Timestamp ahora = new Timestamp(System.currentTimeMillis());
 		Time duracion = new Time(2, 30, 0);
 		
-		Entrada ticket = new Entrada(eve.getNumero(), eve, 123, "VIP");
+		Entrada ticket = new Entrada(eve.getNumero(), 123, "VIP");
 		System.out.println(ticket);
 		return ticket;
 	}

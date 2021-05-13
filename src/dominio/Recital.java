@@ -76,6 +76,14 @@ public class Recital extends Evento implements IGeneros{
 		this.genero = genero;
 	}
 
+	public double getPrecioEntradaVip() {
+		return precioEntradaVip;
+	}
+
+	public double getPrecioEntradaGeneral() {
+		return precioEntradaGeneral;
+	}
+
 	//Constructors
 	public Recital() {
 		super();

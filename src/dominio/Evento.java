@@ -28,6 +28,7 @@ public abstract class Evento {
 		
 	}
 
+	
 	public Evento(String nombreEvento, String tipoEvento, Timestamp ahora,
 			Time duracionEvento) {
 		super();
