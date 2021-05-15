@@ -86,8 +86,25 @@ public class FormulariosAlta {
 			rec.setBandaSoporte1(in.nextLine());
 			System.out.println("Nombre de la banda Soporte2: ");
 			rec.setBandaSoporte2(in.nextLine());
-			listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
-			rec.setGenero(tipos.getGeneroMusical(Integer.parseInt(in.nextLine())));
+			opcion ="";
+			while(opcion!="0") {
+				listarOpciones("Elija el genero: ", "Rock", "Heavy Metal", "Reggaetón", "Trap", "Latino", "Pop");
+				opcion = in.nextLine();
+				switch(opcion) {
+				case "1":
+				case "2":
+				case "3":
+				case "4":
+				case "5":
+				case "6":
+					rec.setGenero(tipos.getGeneroMusical(Integer.parseInt(opcion)));
+					opcion = "0";
+					break;
+				default:
+					System.out.println("Datos invalidos!");
+					break;
+				}
+			}
 			System.out.println("EVENTO DADO DE ALTA!");
 			System.out.println(rec);
 			evento = rec;
