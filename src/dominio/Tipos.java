@@ -23,7 +23,7 @@ public class Tipos {
 		
 		listaDeportes.add(new Deporte(1, "Futbol",300));
 		listaDeportes.add(new Deporte(2, "Rugby",450));		
-		listaDeportes.add(new Deporte(3, "Futbol",280));
+		listaDeportes.add(new Deporte(3, "Hockey",280));
 	}
 	public void mostrarGenerosTeatrales() {
 		for(Genero i:listaGenerosTeatrales) {

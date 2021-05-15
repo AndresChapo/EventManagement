@@ -6,11 +6,11 @@ import java.sql.Timestamp;
 public class Entrada {
 	private int idEntrada;
 	private int idEvento;
-	private float precio;
+	private double precio;
 	private String categoria;
 	private static int cont = 0;
 	
-	public Entrada(int idEvento, float precio, String categoria) {
+	public Entrada(int idEvento, double precio, String categoria) {
 		super();
 		cont++;
 		this.idEntrada = cont;
@@ -21,6 +21,8 @@ public class Entrada {
 	
 	public Entrada() {
 		super();
+		cont++;
+		this.idEntrada = cont;
 	}
 	
 	
@@ -41,11 +43,11 @@ public class Entrada {
 		this.idEvento = idEvento;
 	}
 
-	public float getPrecio() {
+	public double getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(float precio) {
+	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
 

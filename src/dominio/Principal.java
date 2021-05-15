@@ -42,9 +42,7 @@ public class Principal {
 					in.nextLine();
 					break;
 				case "3":
-					listaEntradas.add(formEntrada.altaEntrada(listaEventos, listaEntradas.size()));
-					System.out.println("---FALTA DESARROLLAR PANTALLA DE CARGA--- BASARSE EN altaEvento() Y CARGAR EL RESULTADO EN listaEntradas EL CUAL ES UN ARRAY DE Entradas");
-					in.nextLine();
+					listaEntradas.add(formEntrada.altaEntrada(listaEventos));
 					break;
 				case "4":
 					for (Entrada ent: listaEntradas){
