@@ -44,6 +44,7 @@ public class FormulariosAlta {
 		Timestamp diaHora = new Timestamp(anio - 1900, mes - 1, dia, hora, minutos, 0, 0);
 		Time duracionEvento = new Time(horasDuracion, minutosDuracion, 0);
 		Evento eve = null;
+		opcion = "";
 		while (opcion != "0") {
 			listarOpciones("Seleccione una opción", "Recital", "Teatro", "Infantil", "Deporte");
 			System.out.println("0. Salir");
@@ -51,33 +52,24 @@ public class FormulariosAlta {
 			opcion = in.nextLine();
 
 			switch (opcion) {
-			case "1":
-				eve = altaTipoEvento("recital", nombreEvento, diaHora, duracionEvento, eve);
-				return eve;
-			case "2":
-				eve = altaTipoEvento("teatro", nombreEvento, diaHora, duracionEvento, eve);
-				System.out.println(
-						"---FALTA DESARROLLAR  Testing.nuevoTeatro()");
-				in.nextLine();
-				break;
-			case "3":
-				eve = altaTipoEvento("infantil", nombreEvento, diaHora, duracionEvento, eve);
-				System.out.println(
-						"---FALTA DESARROLLAR Testing.nuevoInfantil()");
-				in.nextLine();
-				break;
-			case "4":
-				eve = altaTipoEvento("deporte", nombreEvento, diaHora, duracionEvento, eve);
-				System.out.println(
-						"---FALTA DESARROLLAR Testing.nuevoDeportivo()");
-				in.nextLine();
-				break;
-			case "0":
-				return null;
-
-			default:
-				System.out.println("Dato invalido!");
-				break;
+				case "1":
+					eve = altaTipoEvento("recital", nombreEvento, diaHora, duracionEvento, eve);
+					return eve;
+				case "2":
+					eve = altaTipoEvento("teatro", nombreEvento, diaHora, duracionEvento, eve);
+					return eve;
+				case "3":
+					eve = altaTipoEvento("infantil", nombreEvento, diaHora, duracionEvento, eve);
+					return eve;
+				case "4":
+					eve = altaTipoEvento("deporte", nombreEvento, diaHora, duracionEvento, eve);
+					return eve;
+				case "0":
+					return null;
+	
+				default:
+					System.out.println("Dato invalido!");
+					break;
 			}
 		}
 		return null;
@@ -113,7 +105,7 @@ public class FormulariosAlta {
 			}
 			teatro.setActores(actores);
 			listarOpciones("Elija el genero: ", "Drama", "Teatro", "Comedia");
-			teatro.setGenero(tipos.getGeneroMusical(Integer.parseInt(in.nextLine())));
+			teatro.setGenero(tipos.getGeneroTeatral(Integer.parseInt(in.nextLine())));
 			System.out.println("EVENTO DADO DE ALTA!");
 			System.out.println(teatro);
 			evento = teatro;
@@ -126,27 +118,64 @@ public class FormulariosAlta {
 				System.out.println("0. Salir");
 				System.out.println("Ingrese la opcion");
 				opcion = in.nextLine();
-			}
-			deportivo.setDeporte(tipos.getDeporte(Integer.parseInt(in.nextLine())));
-			boolean internacional = false;
-			while (internacional != false) {
-				System.out.println("Evento Internacional");
-				if (in.nextLine().toUpperCase() == "SI") {
-					deportivo.setInternacional(true);
-					internacional = true;
-				} else if (in.nextLine().toUpperCase() == "NO") {
-					deportivo.setInternacional(false);
-					internacional = true;
-				} else {
-					internacional = false;
+				switch (opcion) {
+					case "1":
+					case "2":
+					case "3":
+						deportivo.setDeporte(tipos.getDeporte(Integer.parseInt(opcion)));
+						opcion = "0";
+						break;
+					default:
+						System.out.println("Datos invalidos!");
+						break;
 				}
 			}
+
+			opcion ="";
+			while(opcion !=  "0"){
+				listarOpciones("¿El Evento es Internacional?:","SI","NO");
+				opcion = in.nextLine();
+				switch (opcion) {
+					case "1":
+						deportivo.setInternacional(true);
+						opcion ="0";
+						break;
+					case "2":
+						deportivo.setInternacional(false);
+						opcion ="0";
+						break;
+					default:
+						System.out.println("Datos invalidos!");
+						break;
+				}
+			}
+			
 			System.out.println("EVENTO DADO DE ALTA!");
 			System.out.println(deportivo);
 			evento = deportivo;
 			break;
 		case "infantil":
-			Infantil infantil = new Infantil(nombreEvento, diaHora, duracionEvento);
+			String opcion ="";
+			boolean souvenir=false;
+			while(opcion !=  "0"){
+				listarOpciones("¿Se entrega souvenir en el evento?:","SI","NO");
+				opcion = in.nextLine();
+				switch (opcion) {
+					case "1":
+						souvenir = true;
+						opcion ="0";
+						break;
+					case "2":
+						souvenir = false;
+						opcion ="0";
+						break;
+					default:
+						System.out.println("Datos invalidos!");
+						break;
+				}
+			}
+			
+			Infantil infantil = new Infantil(nombreEvento, diaHora, duracionEvento,souvenir);
 			System.out.println("EVENTO DADO DE ALTA!");
 			System.out.println(infantil);
 			evento = infantil;

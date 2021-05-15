@@ -61,11 +61,14 @@ public class Teatro extends Evento implements IGeneros{
 
 	public String getActores() {
 		String cadenaActores="";
-		for(String a:actores) {
-			cadenaActores += a + ", ";
-		}
-		cadenaActores = cadenaActores.substring(0, cadenaActores.length()-2);
+		try {
+			for(String a:actores) {
+				cadenaActores += a + ", ";
+			}
+			cadenaActores = cadenaActores.substring(0, cadenaActores.length()-2);
+		}finally{
 		return cadenaActores;
+		}
 	}
 	
 

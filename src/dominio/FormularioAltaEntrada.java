@@ -35,9 +35,6 @@ public class FormularioAltaEntrada {
 		Teatro t = new Teatro();
 		Recital r = new Recital();	
 		
-		
-
-		}
 		return entrada;
 	}
 }
