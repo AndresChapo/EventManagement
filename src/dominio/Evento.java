@@ -15,6 +15,11 @@ public abstract class Evento {
 	
 	@Override
 	public abstract String toString();
+
+	public String toStringBasicos(){
+		return " Detalles basicos del evento [nombreEvento=" + nombreEvento + ", tipoEvento=" + tipoEvento + ", diaHora=" + diaHora
+				+ ", duracionEvento=" + duracionEvento + "]";
+	}
 	
 	//Constructors
 	public Evento()

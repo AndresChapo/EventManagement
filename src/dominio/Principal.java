@@ -47,6 +47,7 @@ public class Principal {
 				case "4":
 					for (Entrada ent: listaEntradas){
 						System.out.println(ent);
+						System.out.println(listaEventos.get(ent.getIdEvento()-1).toStringBasicos());
 					}
 					System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
 					in.nextLine();
