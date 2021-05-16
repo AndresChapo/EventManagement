@@ -12,14 +12,16 @@ public class Principal {
 		Testing test = new Testing();
 		FormulariosAlta form = new FormulariosAlta();
 		FormularioAltaEntrada formEntrada = new FormularioAltaEntrada();
+		VentaEntrada formVenta = new VentaEntrada();
+		AltaCliente formCliente = new AltaCliente();
 		LinkedList<Evento> listaEventos = new LinkedList<Evento>();
 		LinkedList<Entrada> listaEntradas = new LinkedList<Entrada>();
-		
-
+		LinkedList<Cliente> listaClientes = new LinkedList<Cliente>();
+		LinkedList<Venta> listaVentas = new LinkedList<Venta>();
 		
 		String opcion = "";
 		while(opcion !=  "0"){
-			form.listarOpciones("Seleccione una opción","Cargar Evento","Listar Eventos","Generar Entradas","Listar Entradas");
+			form.listarOpciones("Seleccione una opción","Cargar Evento","Listar Eventos","Generar Entradas","Listar Entradas","Comprar Entrada","Cargar Cliente","Listar Clientes","Listar Ventas");
 			 System.out.println("---------TESTING----------");
 			 System.out.println("11. Probar - Cargar Evento Recital");
 			 System.out.println("12. Probar - Cargar Evento Teatro");
@@ -48,6 +50,26 @@ public class Principal {
 					for (Entrada ent: listaEntradas){
 						System.out.println(ent);
 						System.out.println(listaEventos.get(ent.getIdEvento()-1).toStringBasicos());
+					}
+					System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
+					in.nextLine();
+					break;
+				case "5":
+					listaVentas.add(formVenta.generarVenta(listaEventos,listaClientes,(listaVentas.size()+1),listaEntradas));
+					break;
+				case "6":
+					listaClientes.add(formCliente.CargarCliente(-1));
+					break;
+				case "7":
+					for (Cliente cli: listaClientes){
+						System.out.println(cli);
+					}
+					System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
+					in.nextLine();
+					break;
+				case "8":
+					for (Venta vent: listaVentas){
+						System.out.println(vent);
 					}
 					System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
 					in.nextLine();

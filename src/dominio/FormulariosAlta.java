@@ -273,6 +273,21 @@ public class FormulariosAlta {
 		mostrarOpciones(encabezado, listaOpciones);
 		listaOpciones.removeAll(listaOpciones);
 	}
+	
+	public void listarOpciones(String encabezado, String cadena1, String cadena2, String cadena3, String cadena4,
+			String cadena5, String cadena6, String cadena7, String cadena8) {
+		LinkedList<String> listaOpciones = new LinkedList<String>();
+		listaOpciones.add(cadena1);
+		listaOpciones.add(cadena2);
+		listaOpciones.add(cadena3);
+		listaOpciones.add(cadena4);
+		listaOpciones.add(cadena5);
+		listaOpciones.add(cadena6);
+		listaOpciones.add(cadena7);
+		listaOpciones.add(cadena8);
+		mostrarOpciones(encabezado, listaOpciones);
+		listaOpciones.removeAll(listaOpciones);
+	}
 
 	public FormulariosAlta() {
 		super();
