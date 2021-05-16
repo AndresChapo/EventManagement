@@ -63,5 +63,17 @@ public class Testing {
 		System.out.println(ticket);
 		return ticket;
 	}
+	
+	public Cliente nuevoCLiente() {
+		Cliente c = new Cliente();
+		c.setDni(1);
+		c.setNombre("nombre");
+		c.setApellido("apellido");
+		c.setDireccion("direccion");
+		c.setGenero("genero");
+		c.setLocalidad("localidad");
+		c.setProvincia("provincia");
+		return c;
+	}
 
 }
