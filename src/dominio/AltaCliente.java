@@ -31,6 +31,8 @@ public class AltaCliente {
 		System.out.println("Ingrese la Provincia: ");
 		c.setProvincia(in.nextLine());
 		System.out.println("Se ha cargado el cliente ");
+		System.out.println("PRESIONE CUALQUIER TECLA PARA CONTINUAR.");
+		in.nextLine();
 		return c;
 	}
 }

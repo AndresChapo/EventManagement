@@ -55,6 +55,12 @@ public class Cliente {
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion
+				+ ", genero=" + genero + ", localidad=" + localidad + ", provincia=" + provincia + "]";
+	}
 	
 	
 }
