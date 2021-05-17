@@ -6,6 +6,7 @@ public class Venta {
 	private int idEntrada;
 	private int dni;
 	private int idEvento;
+	private int CantEntrada;
 	private double precio;
 	
 	public Venta() {
@@ -44,10 +45,18 @@ public class Venta {
 		this.precio = precio;
 	}
 
+	public int getCantEntrada() {
+		return CantEntrada;
+	}
+
+	public void setCantEntrada(int cantEntrada) {
+		CantEntrada = cantEntrada;
+	}
+
 	@Override
 	public String toString() {
 		return "Venta [idVenta=" + idVenta + ", idEntrada=" + idEntrada + ", dni=" + dni + ", idEvento=" + idEvento
-				+ ", precio=" + precio + "]";
+				+ ", CantEntrada=" + CantEntrada + ", precio=" + precio + "]";
 	}
 	
 	

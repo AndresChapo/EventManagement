@@ -13,6 +13,7 @@ public class VentaEntrada {
 	public Venta generarVenta(LinkedList<Evento> ListEvent, LinkedList<Cliente> clientes, int idVenta,
 			LinkedList<Entrada> listaEntradas) {
 		int dni, idEvento = 0;
+		opcion="";
 		boolean clienteEncontrado = false;
 		Venta v = new Venta();
 		boolean noCargar = false;
@@ -47,6 +48,7 @@ public class VentaEntrada {
 						break;
 					}
 				}
+				opcion="";
 			}
 			if (!noCargar) {
 				while (opcion != "0") {
@@ -59,16 +61,18 @@ public class VentaEntrada {
 						}
 					}
 					opcion = in.nextLine(); //////////////// FALTA VALIDAR !!
-					idEvento = Integer.parseInt(opcion) - 1;
-					if (idEvento > -1 && idEvento < (ListEvent.size())) {
-						v.setIdEvento(idEvento + 1);
+					idEvento = Integer.parseInt(opcion);
+					if (idEvento > 0 && idEvento < (ListEvent.size()+1)) {
+						v.setIdEvento(idEvento);
 						opcion = "0";
 					} else {
 						System.out.println("Datos invalidos!");
 					}
 				}
 				v.setIdVenta(idVenta);
-
+				System.out.println("Cantidad de entradas a comprar: ");
+				v.setCantEntrada(Integer.parseInt(in.nextLine())); 
+				
 				for (Entrada ent : listaEntradas) {
 					if (ent.getIdEvento() == v.getIdVenta()) {
 						v.setIdEntrada(ent.getIdEntrada());
